@@ -11,64 +11,30 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{F2888CD5-3D39-43DE-8291-457750A96E8C}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{868B0979-C6CF-4C0E-ACDC-CB3384E4C747}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Contenedor de secuencias Grupo 1"
+      DTS:refId="Package\Dimensiones DWH"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Contenedor de secuencias"
-      DTS:DTSID="{441F8AF3-048C-4447-A4A2-89431CFC3EC1}"
+      DTS:DTSID="{9C800FF5-BC5D-49D5-8BE6-8036FF731FCE}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Contenedor de secuencias Grupo 1">
+      DTS:ObjectName="Dimensiones DWH">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Contenedor de secuencias Grupo 1\Tarea Ejecutar Ciudades Ventas"
+          DTS:refId="Package\Dimensiones DWH\Dimension Cfactura"
           DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="Tarea Ejecutar paquete"
-          DTS:DTSID="{C3672CDE-D7EF-48DC-A73C-9E68D892D1EB}"
+          DTS:Description="dimension Cfactura"
+          DTS:DTSID="{184c1a98-35f7-47a0-a2f8-41b817080a50}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Tarea Ejecutar Ciudades Ventas"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>ciudades_ventas.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Contenedor de secuencias Grupo 1\Tarea Ejecutar Clase Cliente"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="Tarea Ejecutar paquete"
-          DTS:DTSID="{D9FB3995-9CA4-43A1-84C0-B8E594B77799}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Tarea Ejecutar Clase Cliente"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>Clase_cliente.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Contenedor de secuencias Grupo 1\Tarea Ejecutar Clase Factura"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="Tarea Ejecutar paquete"
-          DTS:DTSID="{4735F788-9AFF-4757-A3CE-52B127C55202}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Tarea Ejecutar Clase Factura"
+          DTS:ObjectName="Dimension Cfactura"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -78,226 +44,76 @@
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Contenedor de secuencias Grupo 2"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Contenedor de secuencias"
-      DTS:DTSID="{C7FD13BC-B1CB-4994-AF14-06F3909AB452}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Contenedor de secuencias Grupo 2">
-      <DTS:Variables />
-      <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Contenedor de secuencias Grupo 2\Tarea Ejecutar Cliente"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="Tarea Ejecutar paquete"
-          DTS:DTSID="{A0FAAF46-9A70-4B0B-9358-A63DE6361C53}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Tarea Ejecutar Cliente"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>Cliente.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Contenedor de secuencias Grupo 2\Tarea Ejecutar Materiales"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="Tarea Ejecutar paquete"
-          DTS:DTSID="{C1F224B1-BDDF-4624-BD1A-37ADEE464498}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Tarea Ejecutar Materiales"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>Materiales.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Contenedor de secuencias Grupo 2\Tarea Ejecutar Vendedor"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="Tarea Ejecutar paquete"
-          DTS:DTSID="{54830915-0D77-4092-864C-50B6A8E359FF}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Tarea Ejecutar Vendedor"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>Vendedor.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Contenedor de secuencias Grupo 3"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Contenedor de secuencias"
-      DTS:DTSID="{8FAFC46B-69FA-47C8-B02D-C2AF51A4B4C7}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Contenedor de secuencias Grupo 3">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Contenedor de secuencias Grupo 3\Tarea Ejecutar Cabecera Factura"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="Tarea Ejecutar paquete"
-          DTS:DTSID="{0E3FCB4C-4367-4F95-8911-C2F4FD361B25}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Tarea Ejecutar Cabecera Factura"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>Cabecera_factura.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Contenedor de secuencias Grupo 4"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Contenedor de secuencias"
-      DTS:DTSID="{6CA0F739-2D50-4D00-9751-C621E41BDD56}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Contenedor de secuencias Grupo 4">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Contenedor de secuencias Grupo 4\Tarea Ejecutar Detalle Factura"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="Tarea Ejecutar paquete"
-          DTS:DTSID="{7D17E1C8-7E3E-4FEE-9208-5D419383CB90}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Tarea Ejecutar Detalle Factura"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>Detalle_factura.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Dimensiones dwh"
-      DTS:CreationName="STOCK:SEQUENCE"
-      DTS:Description="Contenedor de secuencias"
-      DTS:DTSID="{9C800FF5-BC5D-49D5-8BE6-8036FF731FCE}"
-      DTS:ExecutableType="STOCK:SEQUENCE"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Dimensiones dwh">
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Dimensiones dwh\dimension Cfactura"
-          DTS:CreationName="Microsoft.ExecutePackageTask"
-          DTS:Description="dimension Cfactura"
-          DTS:DTSID="{184c1a98-35f7-47a0-a2f8-41b817080a50}"
-          DTS:ExecutableType="Microsoft.ExecutePackageTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="dimension Cfactura"
-          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExecutePackageTask>
-              <UseProjectReference>True</UseProjectReference>
-              <PackageName>Dim_Clase_factura.dtsx</PackageName>
-            </ExecutePackageTask>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Dimensiones dwh\dimension ciudad"
+          DTS:refId="Package\Dimensiones DWH\Dimension ciudad"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="dimension ciudad"
           DTS:DTSID="{2CE77338-F9DB-4FD8-AD27-863B81CA69C8}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="dimension ciudad"
+          DTS:ObjectName="Dimension ciudad"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>Dim_ciudad.dtsx</PackageName>
+              <PackageName>D_ciudad.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Dimensiones dwh\dimension Cliente"
+          DTS:refId="Package\Dimensiones DWH\Dimension Cliente"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="dimension Cliente"
           DTS:DTSID="{6fadeb3f-9627-412d-b60a-9b9f1f94f8c8}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="dimension Cliente"
+          DTS:ObjectName="Dimension Cliente"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>Dim_cliente.dtsx</PackageName>
+              <PackageName>D_cliente.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Dimensiones dwh\dimension material"
+          DTS:refId="Package\Dimensiones DWH\Dimension material"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="dimension material"
           DTS:DTSID="{36a8256c-592a-4c44-a837-5cc9bf431162}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="dimension material"
+          DTS:ObjectName="Dimension material"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>Dim_materiales.dtsx</PackageName>
+              <PackageName>D_materiales.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Dimensiones dwh\dimension vendedor"
+          DTS:refId="Package\Dimensiones DWH\Dimension vendedor"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="dimension vendedor"
           DTS:DTSID="{1e6638cd-4f8c-458c-8294-68b01e2947f2}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="dimension vendedor"
+          DTS:ObjectName="Dimension vendedor"
           DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
             <ExecutePackageTask>
               <UseProjectReference>True</UseProjectReference>
-              <PackageName>Dim_vendedor.dtsx</PackageName>
+              <PackageName>D_vendedor.dtsx</PackageName>
             </ExecutePackageTask>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Dimensiones dwh\FACT_FACTURA"
+          DTS:refId="Package\Dimensiones DWH\FACT_FACTURA"
           DTS:CreationName="Microsoft.ExecutePackageTask"
           DTS:Description="FACT_FACTURA"
           DTS:DTSID="{95AAC4C8-30BF-4C63-8C67-D0F54457D14C}"
@@ -315,40 +131,222 @@
         </DTS:Executable>
       </DTS:Executables>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Generar Stage"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contenedor de secuencias"
+      DTS:DTSID="{441F8AF3-048C-4447-A4A2-89431CFC3EC1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generar Stage">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Generar Stage\Tarea Ejecutar Cabecera Factura"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{0E3FCB4C-4367-4F95-8911-C2F4FD361B25}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Ejecutar Cabecera Factura"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Cabecera_factura.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Generar Stage\Tarea Ejecutar Ciudades Ventas"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{C3672CDE-D7EF-48DC-A73C-9E68D892D1EB}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Ejecutar Ciudades Ventas"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ciudades_ventas.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Generar Stage\Tarea Ejecutar Clase Cliente"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{D9FB3995-9CA4-43A1-84C0-B8E594B77799}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Ejecutar Clase Cliente"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Clase_cliente.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Generar Stage\Tarea Ejecutar Clase Factura"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{4735F788-9AFF-4757-A3CE-52B127C55202}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Ejecutar Clase Factura"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Clase-factura.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Generar Stage\Tarea Ejecutar Cliente"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{A0FAAF46-9A70-4B0B-9358-A63DE6361C53}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Ejecutar Cliente"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Cliente.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Generar Stage\Tarea Ejecutar Detalle Factura"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{7D17E1C8-7E3E-4FEE-9208-5D419383CB90}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Ejecutar Detalle Factura"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Detalle_factura.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Generar Stage\Tarea Ejecutar Materiales"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{C1F224B1-BDDF-4624-BD1A-37ADEE464498}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Ejecutar Materiales"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Materiales.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Generar Stage\Tarea Ejecutar Vendedor"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Tarea Ejecutar paquete"
+          DTS:DTSID="{54830915-0D77-4092-864C-50B6A8E359FF}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Tarea Ejecutar Vendedor"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>Vendedor.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Generar Stage.PrecedenceConstraints[Restricción]"
+          DTS:CreationName=""
+          DTS:DTSID="{F0A46F77-5DF5-48CE-8143-A2B453279E02}"
+          DTS:From="Package\Generar Stage\Tarea Ejecutar Clase Cliente"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción"
+          DTS:To="Package\Generar Stage\Tarea Ejecutar Clase Factura" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Generar Stage.PrecedenceConstraints[Restricción 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{8E662E9A-FA7E-45F3-999A-D94A5DA217D1}"
+          DTS:From="Package\Generar Stage\Tarea Ejecutar Clase Factura"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 1"
+          DTS:To="Package\Generar Stage\Tarea Ejecutar Ciudades Ventas" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Generar Stage.PrecedenceConstraints[Restricción 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{E5FA448D-D56D-45EF-8D2B-69828709075A}"
+          DTS:From="Package\Generar Stage\Tarea Ejecutar Ciudades Ventas"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 2"
+          DTS:To="Package\Generar Stage\Tarea Ejecutar Cliente" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Generar Stage.PrecedenceConstraints[Restricción 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{8A94E7AC-2C43-4E03-863B-7EA290BC5054}"
+          DTS:From="Package\Generar Stage\Tarea Ejecutar Cliente"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 3"
+          DTS:To="Package\Generar Stage\Tarea Ejecutar Vendedor" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Generar Stage.PrecedenceConstraints[Restricción 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{A350CF30-64C2-4140-82B7-2E22150CEC5B}"
+          DTS:From="Package\Generar Stage\Tarea Ejecutar Vendedor"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 4"
+          DTS:To="Package\Generar Stage\Tarea Ejecutar Materiales" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Generar Stage.PrecedenceConstraints[Restricción 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{D9B83C9A-10EF-4616-BBFF-CFA5BFC9ED75}"
+          DTS:From="Package\Generar Stage\Tarea Ejecutar Materiales"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 5"
+          DTS:To="Package\Generar Stage\Tarea Ejecutar Cabecera Factura" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Generar Stage.PrecedenceConstraints[Restricción 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{122D9F26-B57B-4497-A59A-BC0008E710E5}"
+          DTS:From="Package\Generar Stage\Tarea Ejecutar Cabecera Factura"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 6"
+          DTS:To="Package\Generar Stage\Tarea Ejecutar Detalle Factura" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción]"
       DTS:CreationName=""
-      DTS:DTSID="{069B25FF-A033-40AA-BE83-91402E799E4E}"
-      DTS:From="Package\Contenedor de secuencias Grupo 1"
+      DTS:DTSID="{EC9DB087-0A92-4F5A-B788-11DB56155F49}"
+      DTS:From="Package\Generar Stage"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restricción"
-      DTS:To="Package\Contenedor de secuencias Grupo 2" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{5D830D2E-BAF4-4C3E-A221-63C688C3944E}"
-      DTS:From="Package\Contenedor de secuencias Grupo 2"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Restricción 1"
-      DTS:To="Package\Contenedor de secuencias Grupo 3" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
-      DTS:CreationName=""
-      DTS:DTSID="{49835868-8760-498C-A85C-D0B856275294}"
-      DTS:From="Package\Contenedor de secuencias Grupo 3"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Restricción 2"
-      DTS:To="Package\Contenedor de secuencias Grupo 4" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
-      DTS:CreationName=""
-      DTS:DTSID="{A62E7B8B-1DBB-44C8-8140-F84868AF49B8}"
-      DTS:From="Package\Contenedor de secuencias Grupo 4"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Restricción 3"
-      DTS:To="Package\Dimensiones dwh" />
+      DTS:To="Package\Dimensiones DWH" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
@@ -364,187 +362,338 @@
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="189,42"
-          Id="Package\Contenedor de secuencias Grupo 1\Tarea Ejecutar Ciudades Ventas"
-          TopLeft="36,127" />
+          Id="Package\Generar Stage\Tarea Ejecutar Ciudades Ventas"
+          TopLeft="42,127" />
         <NodeLayout
           Size="189,42"
-          Id="Package\Contenedor de secuencias Grupo 1\Tarea Ejecutar Clase Cliente"
-          TopLeft="27,22" />
+          Id="Package\Generar Stage\Tarea Ejecutar Clase Cliente"
+          TopLeft="33,13" />
         <NodeLayout
           Size="189,42"
-          Id="Package\Contenedor de secuencias Grupo 1\Tarea Ejecutar Clase Factura"
-          TopLeft="31,69" />
+          Id="Package\Generar Stage\Tarea Ejecutar Clase Factura"
+          TopLeft="37,69" />
+        <NodeLayout
+          Size="188,44"
+          Id="Package\Generar Stage\Tarea Ejecutar Cliente"
+          TopLeft="39,188" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Generar Stage\Tarea Ejecutar Vendedor"
+          TopLeft="32,246" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Generar Stage\Tarea Ejecutar Materiales"
+          TopLeft="40,307" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Generar Stage\Tarea Ejecutar Cabecera Factura"
+          TopLeft="46,359" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Generar Stage\Tarea Ejecutar Detalle Factura"
+          TopLeft="44,417" />
+        <EdgeLayout
+          Id="Package\Generar Stage.PrecedenceConstraints[Restricción]"
+          TopLeft="33,34">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="4,56"
+              Start="0,0"
+              End="-3.5,56">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,52"
+                    Point2="-22.5,56"
+                    Point3="-18.5,56" />
+                  <mssgle:LineSegment
+                    End="-3.5,56" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generar Stage.PrecedenceConstraints[Restricción 1]"
+          TopLeft="37,95.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="5,52.3333333333333"
+              Start="0,0"
+              End="-2.5,52.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,48.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,48.3333333333333"
+                    Point2="-22.5,52.3333333333333"
+                    Point3="-18.5,52.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-2.5,52.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generar Stage.PrecedenceConstraints[Restricción 2]"
+          TopLeft="231,148">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-4,56"
+              Start="0,0"
+              End="3.5,56">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,52"
+                    Point2="22.5,56"
+                    Point3="18.5,56" />
+                  <mssgle:LineSegment
+                    End="3.5,56" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generar Stage.PrecedenceConstraints[Restricción 3]"
+          TopLeft="227,216">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-6,51"
+              Start="0,0"
+              End="1.5,51">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,47" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,47"
+                    Point2="22.5,51"
+                    Point3="18.5,51" />
+                  <mssgle:LineSegment
+                    End="1.5,51" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generar Stage.PrecedenceConstraints[Restricción 4]"
+          TopLeft="32,272.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,49.6666666666666"
+              Start="0,0"
+              End="0.5,49.6666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,45.6666666666666" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,45.6666666666666"
+                    Point2="-22.5,49.6666666666666"
+                    Point3="-18.5,49.6666666666666" />
+                  <mssgle:LineSegment
+                    End="0.5,49.6666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generar Stage.PrecedenceConstraints[Restricción 5]"
+          TopLeft="40,333.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="6,46.3333333333333"
+              Start="0,0"
+              End="-1.5,46.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,42.3333333333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,42.3333333333333"
+                    Point2="-22.5,46.3333333333333"
+                    Point3="-18.5,46.3333333333333" />
+                  <mssgle:LineSegment
+                    End="-1.5,46.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generar Stage.PrecedenceConstraints[Restricción 6]"
+          TopLeft="235,380">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-2,58"
+              Start="0,0"
+              End="5.5,58">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.5,0"
+                    Point2="22.5,0"
+                    Point3="22.5,4" />
+                  <mssgle:LineSegment
+                    End="22.5,54" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,54"
+                    Point2="22.5,58"
+                    Point3="18.5,58" />
+                  <mssgle:LineSegment
+                    End="5.5,58" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="266,196"
-          Size="266,239"
-          Id="Package\Contenedor de secuencias Grupo 1"
-          TopLeft="109,33" />
+          PanelSize="266,512"
+          Size="266,555"
+          Id="Package\Generar Stage"
+          TopLeft="109,8" />
         <NodeLayout
-          Size="188,42"
-          Id="Package\Contenedor de secuencias Grupo 2\Tarea Ejecutar Cliente"
-          TopLeft="31,19" />
+          Size="176,42"
+          Id="Package\Dimensiones DWH\Dimension Cfactura"
+          TopLeft="16,77" />
         <NodeLayout
-          Size="189,42"
-          Id="Package\Contenedor de secuencias Grupo 2\Tarea Ejecutar Materiales"
-          TopLeft="31,136" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Contenedor de secuencias Grupo 2\Tarea Ejecutar Vendedor"
-          TopLeft="28,77" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="248,233"
-          Size="248,276"
-          Id="Package\Contenedor de secuencias Grupo 2"
-          TopLeft="434,30" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Contenedor de secuencias Grupo 3\Tarea Ejecutar Cabecera Factura"
-          TopLeft="26,30" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="238,197"
-          Size="238,240"
-          Id="Package\Contenedor de secuencias Grupo 3"
-          TopLeft="710,29" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Contenedor de secuencias Grupo 4\Tarea Ejecutar Detalle Factura"
-          TopLeft="27,36" />
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="241,211"
-          Size="241,254"
-          Id="Package\Contenedor de secuencias Grupo 4"
-          TopLeft="997,29" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Dimensiones dwh\dimension Cfactura"
-          TopLeft="16,86" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Dimensiones dwh\dimension ciudad"
+          Size="166,42"
+          Id="Package\Dimensiones DWH\Dimension ciudad"
           TopLeft="13,19" />
         <NodeLayout
-          Size="189,42"
-          Id="Package\Dimensiones dwh\dimension Cliente"
-          TopLeft="11,140" />
+          Size="168,42"
+          Id="Package\Dimensiones DWH\Dimension Cliente"
+          TopLeft="35,140" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Dimensiones DWH\Dimension material"
+          TopLeft="42,205" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Dimensiones DWH\Dimension vendedor"
+          TopLeft="38,271" />
         <NodeLayout
           Size="189,42"
-          Id="Package\Dimensiones dwh\dimension material"
-          TopLeft="14,205" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Dimensiones dwh\dimension vendedor"
-          TopLeft="13,271" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Dimensiones dwh\FACT_FACTURA"
-          TopLeft="13,344" />
+          Id="Package\Dimensiones DWH\FACT_FACTURA"
+          TopLeft="36,337" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="263,441"
           Size="263,484"
-          Id="Package\Dimensiones dwh"
-          TopLeft="629,310" />
+          Id="Package\Dimensiones DWH"
+          TopLeft="549,60" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="375,150.75">
+          TopLeft="375,285.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="59,0"
+              EndConnector="174,16.5"
               Start="0,0"
-              End="51.5,0">
+              End="166.5,16.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="51.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="682,149">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="28,0"
-              Start="0,0"
-              End="20.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="20.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 2]"
-          TopLeft="948,152.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="49,0"
-              Start="0,0"
-              End="41.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="41.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="1117.5,283">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-357,27"
-              Start="0,0"
-              End="-357,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.5" />
+                    End="83,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.5"
-                    Point2="0,13.5"
-                    Point3="-4,13.5" />
+                    Point1="83,0"
+                    Point2="87,0"
+                    Point3="87,4" />
                   <mssgle:LineSegment
-                    End="-353,13.5" />
+                    End="87,12.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-353,13.5"
-                    Point2="-357,13.5"
-                    Point3="-357,17.5" />
+                    Point1="87,12.5"
+                    Point2="87,16.5"
+                    Point3="91,16.5" />
                   <mssgle:LineSegment
-                    End="-357,19.5" />
+                    End="166.5,16.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
