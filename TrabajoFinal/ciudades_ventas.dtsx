@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-2LQGQ6D"
   DTS:CreatorName="DESKTOP-2LQGQ6D\Jose D"
-  DTS:DTSID="{922D6512-953F-4D93-BC40-3386B7881DCB}"
+  DTS:DTSID="{134E6FFA-A973-4568-A0C1-2D616589D84E}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.167"
   DTS:LocaleID="9226"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Ciudades_ventas"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{E14A14FC-24B0-4AE4-9564-CE0FEF681188}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{6C735BA5-6216-4207-A815-3661ADF61CFE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -510,7 +510,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

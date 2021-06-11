@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-2LQGQ6D</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWheoZ0lYJkaoEoF6PtLE5AAAAAACAAAAAAAQZgAAAAEAACAAAAAEGYc0EpstjzMzh642l0mN+UijVQEYZfUNtmT/djzFuwAAAAAOgAAAAAIAACAAAACoVYL8qP1TCwANh2QbCsp60srh6/3FbjgoXkLBqlHRZpAAAAAxUvM7ndLizJkT/HaSbyOXZ+a9JDVKHXbacyg5ty9GnEYcfawCLkEhxyqy8bKn6khnbu5yPZRVBT0y+m/atQHoV0NXV9b/yW5NsvFEX+cybFAsNv/CpuXmgUEv0DAAhJqS0jkB3mJJJ7DCxiOBogBmfpkceDJexjzTodT4RKbVnDUbMjxBwfnJHbL8cXoVIktAAAAAtGefeRN3ofpwo8Gqt44PqfsZ2ndLPxIYbqhvwRjZt9jegJ0s+fonLP05OFT9rHtDdM4HaHIZtKBk0TAMMlCfGQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWheoZ0lYJkaoEoF6PtLE5AAAAAACAAAAAAAQZgAAAAEAACAAAACEhPtnRpLPZKI+vwHy1L3d/dH28E++YQGvAm2wCiEhFAAAAAAOgAAAAAIAACAAAAD0b1MbqUnjUPz8gzTKJBYie33x+shg7wvm3v/DgZaAy5AAAACQUY4+h78GXP6knkFV1EW5h1kX1lrkpcnpClXEW5XK59CaULq5ctvG4eh/eo4OzEfMyHT6I28Yyb1zyLDP+SgU7tzbakicfrNKVqVPaW/Fn4pxb52kALKa/TQFsZUK6jxWl1/AdD1MFPcA9BGvQPr1iwtf9xDFkdKKgXQ4AmTXa2QeKmSqDxNtxLvCGy5Vw+xAAAAATnao4zJ35Mwj+winVGO5HeiCRqV0T1uU/8hPIaPnJGm2hDxqMF46E7Ib5FOWqAy+XwIQKl8SHewq8KsO0sAHkg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -36,7 +36,6 @@
           <SSIS:Package SSIS:Name="Cliente.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Clase-factura.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Clase_cliente.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="ciudades_ventas.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Cabecera_factura.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="ETL.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="FACT_FACTURA.dtsx" SSIS:EntryPoint="1" />
@@ -45,6 +44,7 @@
           <SSIS:Package SSIS:Name="D_cliente.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="D_materiales.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="D_vendedor.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Ciudades_ventas.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Conexion_Stage.conmgr" />
@@ -504,23 +504,6 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{1D37F24E-3F7A-47BF-99D8-13B27D14EE7E}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="ciudades_ventas.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{922D6512-953F-4D93-BC40-3386B7881DCB}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E14A14FC-24B0-4AE4-9564-CE0FEF681188}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1696,6 +1679,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{B3591404-6619-417C-9A18-B623E23032C3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Ciudades_ventas.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{134E6FFA-A973-4568-A0C1-2D616589D84E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Ciudades_ventas</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6C735BA5-6216-4207-A815-3661ADF61CFE}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
