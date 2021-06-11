@@ -1,0 +1,679 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "es-CO",
+    "dataSources": [
+      {
+        "name": "SqlServer DESKTOP-2LQGQ6DBIANALITICA DWH",
+        "connectionString": "Provider=SQLNCLI11;Data Source=DESKTOP-2LQGQ6D\\BIANALITICA;Initial Catalog=DWH;Integrated Security=SSPI;Persist Security Info=false",
+        "impersonationMode": "impersonateAccount",
+        "account": "Jose D",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Dim_TIEMPO",
+        "columns": [
+          {
+            "name": "ID_FECHA",
+            "dataType": "int64",
+            "sourceColumn": "ID_FECHA",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FECHA",
+            "dataType": "dateTime",
+            "sourceColumn": "FECHA",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "ID_MES",
+            "dataType": "int64",
+            "sourceColumn": "ID_MES",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_ANIO",
+            "dataType": "int64",
+            "sourceColumn": "ID_ANIO",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_SEMANA",
+            "dataType": "int64",
+            "sourceColumn": "ID_SEMANA",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_NO_MES",
+            "dataType": "int64",
+            "sourceColumn": "ID_NO_MES",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_ANIO_ANT",
+            "dataType": "int64",
+            "sourceColumn": "ID_ANIO_ANT",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_SEMESTRE",
+            "dataType": "int64",
+            "sourceColumn": "ID_SEMESTRE",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_CUATRIMESTRE",
+            "dataType": "int64",
+            "sourceColumn": "ID_CUATRIMESTRE",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_TRIMESTRE",
+            "dataType": "int64",
+            "sourceColumn": "ID_TRIMESTRE",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ID_BIMESTRE",
+            "dataType": "int64",
+            "sourceColumn": "ID_BIMESTRE",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DESC_No_MES",
+            "dataType": "string",
+            "sourceColumn": "DESC_No_MES",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DESC_MES",
+            "dataType": "string",
+            "sourceColumn": "DESC_MES",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DESC_MES_CORTA",
+            "dataType": "string",
+            "sourceColumn": "DESC_MES_CORTA",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DESC_FECHA",
+            "dataType": "string",
+            "sourceColumn": "DESC_FECHA",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DESC_BIMESTRE",
+            "dataType": "string",
+            "sourceColumn": "DESC_BIMESTRE",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Desc_Trimestre",
+            "dataType": "string",
+            "sourceColumn": "Desc_Trimestre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Desc_cuatrimestre",
+            "dataType": "string",
+            "sourceColumn": "Desc_cuatrimestre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Desc_semestre",
+            "dataType": "string",
+            "sourceColumn": "Desc_semestre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Desc_semana",
+            "dataType": "string",
+            "sourceColumn": "Desc_semana",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Num_dia_Semana",
+            "dataType": "int64",
+            "sourceColumn": "Num_dia_Semana",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_TIEMPO",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [DWH].[Dim_TIEMPO].* FROM [DWH].[Dim_TIEMPO] ",
+              "dataSource": "SqlServer DESKTOP-2LQGQ6DBIANALITICA DWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [DWH].[Dim_TIEMPO].* FROM [DWH].[Dim_TIEMPO] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_TIEMPO"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "DWH"
+          }
+        ]
+      },
+      {
+        "name": "DM_ciudades",
+        "columns": [
+          {
+            "name": "SPK_CIUDADES",
+            "dataType": "int64",
+            "sourceColumn": "SPK_CIUDADES",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Id_Ciudad",
+            "dataType": "string",
+            "sourceColumn": "Id_Ciudad",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Descripcion",
+            "dataType": "string",
+            "sourceColumn": "Descripcion",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "fecha_creacion",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha_creacion",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "USUSARIO_PROCESO",
+            "dataType": "string",
+            "sourceColumn": "USUSARIO_PROCESO",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "NUMERO_PROCESO",
+            "dataType": "int64",
+            "sourceColumn": "NUMERO_PROCESO",
+            "sourceProviderType": "BigInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DM_ciudades",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [Ventas].[DM_ciudades].* FROM [Ventas].[DM_ciudades] ",
+              "dataSource": "SqlServer DESKTOP-2LQGQ6DBIANALITICA DWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Ventas].[DM_ciudades].* FROM [Ventas].[DM_ciudades] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DM_ciudades"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "Ventas"
+          }
+        ]
+      },
+      {
+        "name": "DM_Clase_factura",
+        "columns": [
+          {
+            "name": "SPK_CLASE_FACTURA",
+            "dataType": "int64",
+            "sourceColumn": "SPK_CLASE_FACTURA",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "id_tipo_factura",
+            "dataType": "string",
+            "sourceColumn": "id_tipo_factura",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Descripcion",
+            "dataType": "string",
+            "sourceColumn": "Descripcion",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "USUSARIO_PROCESO",
+            "dataType": "string",
+            "sourceColumn": "USUSARIO_PROCESO",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "NUMERO_PROCESO",
+            "dataType": "int64",
+            "sourceColumn": "NUMERO_PROCESO",
+            "sourceProviderType": "BigInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DM_Clase_factura",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [Ventas].[DM_Clase_factura].* FROM [Ventas].[DM_Clase_factura] ",
+              "dataSource": "SqlServer DESKTOP-2LQGQ6DBIANALITICA DWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Ventas].[DM_Clase_factura].* FROM [Ventas].[DM_Clase_factura] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DM_Clase_factura"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "Ventas"
+          }
+        ]
+      },
+      {
+        "name": "DM_Cliente",
+        "columns": [
+          {
+            "name": "SPK_CLIENTE",
+            "dataType": "int64",
+            "sourceColumn": "SPK_CLIENTE",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "id_CLIENTE",
+            "dataType": "string",
+            "sourceColumn": "id_CLIENTE",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "documento",
+            "dataType": "double",
+            "sourceColumn": "documento",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "NOMBRE",
+            "dataType": "string",
+            "sourceColumn": "NOMBRE",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "fecha_creacion",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha_creacion",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "id_tipo_cliente",
+            "dataType": "double",
+            "sourceColumn": "id_tipo_cliente",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "descripcion_tipo_cliente",
+            "dataType": "string",
+            "sourceColumn": "descripcion_tipo_cliente",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "USUSARIO_PROCESO",
+            "dataType": "string",
+            "sourceColumn": "USUSARIO_PROCESO",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "NUMERO_PROCESO",
+            "dataType": "int64",
+            "sourceColumn": "NUMERO_PROCESO",
+            "sourceProviderType": "BigInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DM_Cliente",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [Ventas].[DM_Cliente].* FROM [Ventas].[DM_Cliente] ",
+              "dataSource": "SqlServer DESKTOP-2LQGQ6DBIANALITICA DWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Ventas].[DM_Cliente].* FROM [Ventas].[DM_Cliente] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DM_Cliente"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "Ventas"
+          }
+        ]
+      },
+      {
+        "name": "DM_Materiales",
+        "columns": [
+          {
+            "name": "SPK_MATERIALES",
+            "dataType": "int64",
+            "sourceColumn": "SPK_MATERIALES",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "id_producto",
+            "dataType": "double",
+            "sourceColumn": "id_producto",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "desc_material",
+            "dataType": "string",
+            "sourceColumn": "desc_material",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "fecha_creacion",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha_creacion",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "USUSARIO_PROCESO",
+            "dataType": "string",
+            "sourceColumn": "USUSARIO_PROCESO",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "NUMERO_PROCESO",
+            "dataType": "int64",
+            "sourceColumn": "NUMERO_PROCESO",
+            "sourceProviderType": "BigInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DM_Materiales",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [Ventas].[DM_Materiales].* FROM [Ventas].[DM_Materiales] ",
+              "dataSource": "SqlServer DESKTOP-2LQGQ6DBIANALITICA DWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Ventas].[DM_Materiales].* FROM [Ventas].[DM_Materiales] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DM_Materiales"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "Ventas"
+          }
+        ]
+      },
+      {
+        "name": "DM_Vendedor",
+        "columns": [
+          {
+            "name": "SPK_VENDEDOR",
+            "dataType": "int64",
+            "sourceColumn": "SPK_VENDEDOR",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "id_vendedor",
+            "dataType": "double",
+            "sourceColumn": "id_vendedor",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "fecha_creacion",
+            "dataType": "dateTime",
+            "sourceColumn": "fecha_creacion",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "USUSARIO_PROCESO",
+            "dataType": "string",
+            "sourceColumn": "USUSARIO_PROCESO",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "NUMERO_PROCESO",
+            "dataType": "int64",
+            "sourceColumn": "NUMERO_PROCESO",
+            "sourceProviderType": "BigInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DM_Vendedor",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [Ventas].[DM_Vendedor].* FROM [Ventas].[DM_Vendedor] ",
+              "dataSource": "SqlServer DESKTOP-2LQGQ6DBIANALITICA DWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Ventas].[DM_Vendedor].* FROM [Ventas].[DM_Vendedor] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "DM_Vendedor"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "Ventas"
+          }
+        ]
+      },
+      {
+        "name": "FACT_FACTURA",
+        "columns": [
+          {
+            "name": "No_FACTURA",
+            "dataType": "double",
+            "sourceColumn": "No_FACTURA",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "ID_FECHA",
+            "dataType": "int64",
+            "sourceColumn": "ID_FECHA",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SPK_CLASE_FACTURA",
+            "dataType": "int64",
+            "sourceColumn": "SPK_CLASE_FACTURA",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SPK_CIUDADES",
+            "dataType": "int64",
+            "sourceColumn": "SPK_CIUDADES",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SPK_VENDEDOR",
+            "dataType": "int64",
+            "sourceColumn": "SPK_VENDEDOR",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "SPK_CLIENTE",
+            "dataType": "int64",
+            "sourceColumn": "SPK_CLIENTE",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "No_Item",
+            "dataType": "double",
+            "sourceColumn": "No_Item",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "CATEGORIA_VENTA",
+            "dataType": "string",
+            "sourceColumn": "CATEGORIA_VENTA",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "SPK_MATERIALES",
+            "dataType": "int64",
+            "sourceColumn": "SPK_MATERIALES",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PRECIO_MATERIAL",
+            "dataType": "double",
+            "sourceColumn": "PRECIO_MATERIAL",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "CANTIDAD",
+            "dataType": "double",
+            "sourceColumn": "CANTIDAD",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "TOTAL_MATERIAL",
+            "dataType": "double",
+            "sourceColumn": "TOTAL_MATERIAL",
+            "sourceProviderType": "Double"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FACT_FACTURA",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [Ventas].[FACT_FACTURA].* FROM [Ventas].[FACT_FACTURA] ",
+              "dataSource": "SqlServer DESKTOP-2LQGQ6DBIANALITICA DWH"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [Ventas].[FACT_FACTURA].* FROM [Ventas].[FACT_FACTURA] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "FACT_FACTURA"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "Ventas"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "3640c6f8-ff87-4bc5-946f-1b6598dbdff1",
+        "fromTable": "FACT_FACTURA",
+        "fromColumn": "ID_FECHA",
+        "toTable": "Dim_TIEMPO",
+        "toColumn": "ID_FECHA"
+      },
+      {
+        "name": "48585990-ea01-486f-8935-b4e214946eb3",
+        "fromTable": "FACT_FACTURA",
+        "fromColumn": "SPK_CIUDADES",
+        "toTable": "DM_ciudades",
+        "toColumn": "SPK_CIUDADES"
+      },
+      {
+        "name": "29c28459-bef4-41e7-8e8c-c8279d150e74",
+        "fromTable": "FACT_FACTURA",
+        "fromColumn": "SPK_CLASE_FACTURA",
+        "toTable": "DM_Clase_factura",
+        "toColumn": "SPK_CLASE_FACTURA"
+      },
+      {
+        "name": "a91fee3b-a1e1-4dc5-9c7e-aea9af405861",
+        "fromTable": "FACT_FACTURA",
+        "fromColumn": "SPK_CLIENTE",
+        "toTable": "DM_Cliente",
+        "toColumn": "SPK_CLIENTE"
+      },
+      {
+        "name": "faf113df-127e-4b70-9915-69f59e73976a",
+        "fromTable": "FACT_FACTURA",
+        "fromColumn": "SPK_MATERIALES",
+        "toTable": "DM_Materiales",
+        "toColumn": "SPK_MATERIALES"
+      },
+      {
+        "name": "a6af62fc-17cf-43e3-9403-64f49fc29c50",
+        "fromTable": "FACT_FACTURA",
+        "fromColumn": "SPK_VENDEDOR",
+        "toTable": "DM_Vendedor",
+        "toColumn": "SPK_VENDEDOR"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

@@ -1,0 +1,628 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/2/2021 11:43:37 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-2LQGQ6D"
+  DTS:CreatorName="DESKTOP-2LQGQ6D\Jose D"
+  DTS:DTSID="{B4F96472-2B92-4089-842E-8E5A0B328AAB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{348FACFB-533C-4346-971F-CF4A29C50969}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Flujo de datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{469A8D9C-B630-4B6B-A18D-FEB9EDFF9301}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Flujo de datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarea Flujo de datos\Asignacion de usuario"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Asignacion de usuario"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Asignacion de usuario.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\Tarea Flujo de datos\Asignacion de usuario.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de columna derivada].Columns[numero_proceso]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de columna derivada].Columns[numero_proceso]"
+                      name="numero_proceso"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">@[System::ServerExecutionID]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[System::ServerExecutionID]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de columna derivada].Columns[usuario_preceso]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="22"
+                      lineageId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de columna derivada].Columns[usuario_preceso]"
+                      name="usuario_preceso"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">@[System::UserName]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[System::UserName]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\Tarea Flujo de datos\Asignacion de usuario.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET DWH"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[Ventas].[DM_Cliente]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Connections[IDbConnection]"
+                  connectionManagerID="{CD3396AA-3859-4557-95BB-067813FB1BBA}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Conexion_DWH]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].Columns[id_CLIENTE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id_CLIENTE"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[id_CLIENTE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[id_CLIENTE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].Columns[documento]"
+                      cachedDataType="r8"
+                      cachedName="documento"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[documento]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[documento]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].Columns[NOMBRE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="NOMBRE"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[NOMBRE]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[NOMBRE]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].Columns[id_tipo_cliente]"
+                      cachedDataType="r8"
+                      cachedName="id_tipo_cliente"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[id_tipo_cliente]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[id_tipo_cliente]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].Columns[fecha_creacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="fecha_creacion"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[fecha_creacion]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[fecha_creacion]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].Columns[numero_proceso]"
+                      cachedDataType="i8"
+                      cachedName="numero_proceso"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[NUMERO_PROCESO]"
+                      lineageId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de columna derivada].Columns[numero_proceso]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].Columns[Descripcion]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Descripcion"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[descripcion_tipo_cliente]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[Descripcion]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].Columns[usuario_preceso]"
+                      cachedDataType="wstr"
+                      cachedLength="22"
+                      cachedName="usuario_preceso"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[USUSARIO_PROCESO]"
+                      lineageId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de columna derivada].Columns[usuario_preceso]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[SPK_CLIENTE]"
+                      dataType="i4"
+                      name="SPK_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[id_CLIENTE]"
+                      dataType="wstr"
+                      length="255"
+                      name="id_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[documento]"
+                      dataType="r8"
+                      name="documento" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[NOMBRE]"
+                      dataType="wstr"
+                      length="255"
+                      name="NOMBRE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[fecha_creacion]"
+                      dataType="dbTimeStamp"
+                      name="fecha_creacion" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[id_tipo_cliente]"
+                      dataType="r8"
+                      name="id_tipo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[descripcion_tipo_cliente]"
+                      dataType="wstr"
+                      length="255"
+                      name="descripcion_tipo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[USUSARIO_PROCESO]"
+                      dataType="wstr"
+                      length="255"
+                      name="USUSARIO_PROCESO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET].ExternalColumns[NUMERO_PROCESO]"
+                      dataType="i8"
+                      name="NUMERO_PROCESO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Origen de ADO NET Stage"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select id_CLIENTE, documento, NOMBRE, A.id_tipo_cliente, fecha_creacion, B.Descripcion
+from [Stage].[Ventas].[Cliente] as A
+inner join [Stage].[Ventas].[Clase_cliente] as B on A.id_tipo_cliente = B.id_tipo_cliente;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Connections[IDbConnection]"
+                  connectionManagerID="{AED28A02-2E49-4B4C-9736-3BC4CBA133DC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Conexion_Stage]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[id_CLIENTE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[id_CLIENTE]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[id_CLIENTE]"
+                      name="id_CLIENTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[documento]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[documento]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[documento]"
+                      name="documento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[NOMBRE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[NOMBRE]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[NOMBRE]"
+                      name="NOMBRE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[id_tipo_cliente]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[id_tipo_cliente]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[id_tipo_cliente]"
+                      name="id_tipo_cliente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[fecha_creacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[fecha_creacion]"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[fecha_creacion]"
+                      name="fecha_creacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[Descripcion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[Descripcion]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].Columns[Descripcion]"
+                      name="Descripcion"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[id_CLIENTE]"
+                      dataType="wstr"
+                      length="255"
+                      name="id_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[documento]"
+                      dataType="r8"
+                      name="documento" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[NOMBRE]"
+                      dataType="wstr"
+                      length="255"
+                      name="NOMBRE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[id_tipo_cliente]"
+                      dataType="r8"
+                      name="id_tipo_cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[fecha_creacion]"
+                      dataType="dbTimeStamp"
+                      name="fecha_creacion" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET].ExternalColumns[Descripcion]"
+                      dataType="wstr"
+                      length="255"
+                      name="Descripcion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[id_CLIENTE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[id_CLIENTE]"
+                      name="id_CLIENTE" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[documento]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[documento]"
+                      name="documento" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[NOMBRE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[NOMBRE]"
+                      name="NOMBRE" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[id_tipo_cliente]"
+                      dataType="r8"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[id_tipo_cliente]"
+                      name="id_tipo_cliente" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[fecha_creacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[fecha_creacion]"
+                      name="fecha_creacion" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[Descripcion]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[Descripcion]"
+                      name="Descripcion" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de columna derivada]"
+              endId="Package\Tarea Flujo de datos\Destino de ADO NET DWH.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de columna derivada"
+              startId="Package\Tarea Flujo de datos\Asignacion de usuario.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
+              endId="Package\Tarea Flujo de datos\Asignacion de usuario.Inputs[Entrada de columna derivada]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Tarea Flujo de datos\Origen de ADO NET Stage.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="434,62" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tarea Flujo de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Tarea Flujo de datos\Origen de ADO NET Stage"
+          TopLeft="525,63" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Tarea Flujo de datos\Asignacion de usuario"
+          TopLeft="529,180" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\Tarea Flujo de datos\Destino de ADO NET DWH"
+          TopLeft="527,294" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
+          TopLeft="623,105">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75"
+              Start="0,0"
+              End="0,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Salida de columna derivada]"
+          TopLeft="620,222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9,72"
+              Start="0,0"
+              End="9,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32"
+                    Point2="0,36"
+                    Point3="4,36" />
+                  <mssgle:LineSegment
+                    End="5,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5,36"
+                    Point2="9,36"
+                    Point3="9,40" />
+                  <mssgle:LineSegment
+                    End="9,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Origen de ADO NET Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Destino de ADO NET DWH">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

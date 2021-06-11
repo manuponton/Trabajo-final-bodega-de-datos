@@ -1,0 +1,690 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/18/2021 6:25:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-2LQGQ6D"
+  DTS:CreatorName="DESKTOP-2LQGQ6D\Jose D"
+  DTS:DTSID="{17518C5B-EE9D-4EBB-B5E0-C4FDF5F0E80A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{51CE6AA6-E2B7-4942-A2AB-B21D24B52E2B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insertar datos Stage Detalle Factura"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{36F0950A-0C19-4CB0-A15F-20B7877FDF03}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar datos Stage Detalle Factura"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET Stage Detalle_Factura"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[Ventas].[detalle_factura]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Connections[IDbConnection]"
+                  connectionManagerID="{AED28A02-2E49-4B4C-9736-3BC4CBA133DC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Conexion_Stage]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].Columns[No_FACTURA]"
+                      cachedDataType="r8"
+                      cachedName="No_FACTURA"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[No_FACTURA]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[No_FACTURA]" />
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].Columns[No_Item]"
+                      cachedDataType="r8"
+                      cachedName="No_Item"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[No_Item]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[No_Item]" />
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].Columns[CATEGORIA_VENTA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CATEGORIA_VENTA"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[CATEGORIA_VENTA]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[CATEGORIA_VENTA]" />
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].Columns[CODIGO_PRODUCTO]"
+                      cachedDataType="r8"
+                      cachedName="CODIGO_PRODUCTO"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[CODIGO_PRODUCTO]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[CODIGO_PRODUCTO]" />
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].Columns[PRECIO_MATERIAL]"
+                      cachedDataType="r8"
+                      cachedName="PRECIO_MATERIAL"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[PRECIO_MATERIAL]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[PRECIO_MATERIAL]" />
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].Columns[CANTIDAD]"
+                      cachedDataType="r8"
+                      cachedName="CANTIDAD"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[CANTIDAD]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[CANTIDAD]" />
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].Columns[TOTAL_MATERIAL]"
+                      cachedDataType="r8"
+                      cachedName="TOTAL_MATERIAL"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[TOTAL_MATERIAL]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[TOTAL_MATERIAL]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[No_FACTURA]"
+                      dataType="r8"
+                      name="No_FACTURA" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[No_Item]"
+                      dataType="r8"
+                      name="No_Item" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[CATEGORIA_VENTA]"
+                      dataType="wstr"
+                      length="255"
+                      name="CATEGORIA_VENTA" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[CODIGO_PRODUCTO]"
+                      dataType="r8"
+                      name="CODIGO_PRODUCTO" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[PRECIO_MATERIAL]"
+                      dataType="r8"
+                      name="PRECIO_MATERIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[CANTIDAD]"
+                      dataType="r8"
+                      name="CANTIDAD" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET].ExternalColumns[TOTAL_MATERIAL]"
+                      dataType="r8"
+                      name="TOTAL_MATERIAL" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+              name="División condicional Id No factura"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Inputs[Entrada de división condicional]"
+                  description="Entrada en la transformación División condicional"
+                  name="Entrada de división condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Inputs[Entrada de división condicional].Columns[No_FACTURA]"
+                      cachedDataType="r8"
+                      cachedName="No_FACTURA"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[No_FACTURA]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Outputs[not null]"
+                  description="Salida 1 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="not null"
+                  synchronousInputId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">[ISNULL](#{Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[No_FACTURA]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(No_FACTURA)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Outputs[Dato not null]"
+                  description="Salida predeterminada de la transformación División condicional"
+                  exclusionGroup="1"
+                  name="Dato not null"
+                  synchronousInputId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Inputs[Entrada de división condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Outputs[Salida de error de división condicional]"
+                  description="Salida de error de la transformación División condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de división condicional"
+                  synchronousInputId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Inputs[Entrada de división condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Origen de ADO NET Proyecto_Ventas Detalle_Factura"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[Ventas].[detalle_factura]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Connections[IDbConnection]"
+                  connectionManagerID="{AD09DAA5-0921-4D07-810D-7BB22DB802A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Conexion_Proyecto_Ventas]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[No_FACTURA]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[No_FACTURA]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[No_FACTURA]"
+                      name="No_FACTURA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[No_Item]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[No_Item]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[No_Item]"
+                      name="No_Item"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[CATEGORIA_VENTA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[CATEGORIA_VENTA]"
+                      length="255"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[CATEGORIA_VENTA]"
+                      name="CATEGORIA_VENTA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[CODIGO_PRODUCTO]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[CODIGO_PRODUCTO]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[CODIGO_PRODUCTO]"
+                      name="CODIGO_PRODUCTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[PRECIO_MATERIAL]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[PRECIO_MATERIAL]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[PRECIO_MATERIAL]"
+                      name="PRECIO_MATERIAL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[CANTIDAD]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[CANTIDAD]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[CANTIDAD]"
+                      name="CANTIDAD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[TOTAL_MATERIAL]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[TOTAL_MATERIAL]"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].Columns[TOTAL_MATERIAL]"
+                      name="TOTAL_MATERIAL"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[No_FACTURA]"
+                      dataType="r8"
+                      name="No_FACTURA" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[No_Item]"
+                      dataType="r8"
+                      name="No_Item" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[CATEGORIA_VENTA]"
+                      dataType="wstr"
+                      length="255"
+                      name="CATEGORIA_VENTA" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[CODIGO_PRODUCTO]"
+                      dataType="r8"
+                      name="CODIGO_PRODUCTO" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[PRECIO_MATERIAL]"
+                      dataType="r8"
+                      name="PRECIO_MATERIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[CANTIDAD]"
+                      dataType="r8"
+                      name="CANTIDAD" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET].ExternalColumns[TOTAL_MATERIAL]"
+                      dataType="r8"
+                      name="TOTAL_MATERIAL" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[No_FACTURA]"
+                      dataType="r8"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[No_FACTURA]"
+                      name="No_FACTURA" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[No_Item]"
+                      dataType="r8"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[No_Item]"
+                      name="No_Item" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[CATEGORIA_VENTA]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[CATEGORIA_VENTA]"
+                      name="CATEGORIA_VENTA" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[CODIGO_PRODUCTO]"
+                      dataType="r8"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[CODIGO_PRODUCTO]"
+                      name="CODIGO_PRODUCTO" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[PRECIO_MATERIAL]"
+                      dataType="r8"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[PRECIO_MATERIAL]"
+                      name="PRECIO_MATERIAL" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[CANTIDAD]"
+                      dataType="r8"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[CANTIDAD]"
+                      name="CANTIDAD" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[TOTAL_MATERIAL]"
+                      dataType="r8"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[TOTAL_MATERIAL]"
+                      name="TOTAL_MATERIAL" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insertar datos Stage Detalle Factura.Paths[Dato not null]"
+              endId="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura.Inputs[Entrada de destino de ADO NET]"
+              name="Dato not null"
+              startId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Outputs[Dato not null]" />
+            <path
+              refId="Package\Insertar datos Stage Detalle Factura.Paths[Salida de origen de ADO NET]"
+              endId="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura.Inputs[Entrada de división condicional]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar datos Stage Detalle Factura"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Limpiar datos Stage Detalle Factura"
+      DTS:DTSID="{4E4190E0-8F70-4513-A528-D6EEED47F6BB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar datos Stage Detalle Factura"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AED28A02-2E49-4B4C-9736-3BC4CBA133DC}"
+          SQLTask:SqlStatementSource="truncate table Ventas.detalle_factura" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{311BCD25-5CB7-47F4-9053-4ABF1329E590}"
+      DTS:From="Package\Limpiar datos Stage Detalle Factura"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Insertar datos Stage Detalle Factura" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="249,42"
+          Id="Package\Insertar datos Stage Detalle Factura"
+          TopLeft="514,164" />
+        <NodeLayout
+          Size="275,42"
+          Id="Package\Limpiar datos Stage Detalle Factura"
+          TopLeft="486,43" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="623.5,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15,79"
+              Start="0,0"
+              End="15,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5"
+                    Point2="0,39.5"
+                    Point3="4,39.5" />
+                  <mssgle:LineSegment
+                    End="11,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,39.5"
+                    Point2="15,39.5"
+                    Point3="15,43.5" />
+                  <mssgle:LineSegment
+                    End="15,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insertar datos Stage Detalle Factura">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Insertar datos Stage Detalle Factura\División condicional Id No factura"
+          TopLeft="364,162" />
+        <NodeLayout
+          Size="331,42"
+          Id="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura"
+          TopLeft="483,47" />
+        <NodeLayout
+          Size="283,42"
+          Id="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura"
+          TopLeft="541,277" />
+        <EdgeLayout
+          Id="Package\Insertar datos Stage Detalle Factura.Paths[Salida de origen de ADO NET]"
+          TopLeft="648.5,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-166.5,73"
+              Start="0,0"
+              End="-166.5,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.5"
+                    Point2="0,36.5"
+                    Point3="-4,36.5" />
+                  <mssgle:LineSegment
+                    End="-162.5,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-162.5,36.5"
+                    Point2="-166.5,36.5"
+                    Point3="-166.5,40.5" />
+                  <mssgle:LineSegment
+                    End="-166.5,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insertar datos Stage Detalle Factura.Paths[Dato not null]"
+          TopLeft="482,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="200.5,73"
+              Start="0,0"
+              End="200.5,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.5"
+                    Point2="0,36.5"
+                    Point3="4,36.5" />
+                  <mssgle:LineSegment
+                    End="196.5,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="196.5,36.5"
+                    Point2="200.5,36.5"
+                    Point3="200.5,40.5" />
+                  <mssgle:LineSegment
+                    End="200.5,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="71.38787109375,41.5,57.7242578125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insertar datos Stage Detalle Factura\Origen de ADO NET Proyecto_Ventas Detalle_Factura">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insertar datos Stage Detalle Factura\Destino de ADO NET Stage Detalle_Factura">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

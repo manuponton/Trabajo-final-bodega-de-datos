@@ -1,0 +1,572 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/18/2021 7:08:54 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-2LQGQ6D"
+  DTS:CreatorName="DESKTOP-2LQGQ6D\Jose D"
+  DTS:DTSID="{922D6512-953F-4D93-BC40-3386B7881DCB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="9226"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{E14A14FC-24B0-4AE4-9564-CE0FEF681188}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insertar datos Stage Ciudades-Ventas"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{6AE8318D-4F56-4F0B-8225-F3BB3644A754}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar datos Stage Ciudades-Ventas"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino de ADO NET Stage Ciudades-Ventas"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[Ventas].[ciudades_ventas]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Connections[IDbConnection]"
+                  connectionManagerID="{AED28A02-2E49-4B4C-9736-3BC4CBA133DC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Conexion_Stage]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET].Columns[Id_Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Id_Ciudad"
+                      externalMetadataColumnId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Ciudad]"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[Id_Ciudad]" />
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET].Columns[Descripcion]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Descripcion"
+                      externalMetadataColumnId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET].ExternalColumns[Descripcion]"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[Descripcion]" />
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET].Columns[fecha_creacion]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="fecha_creacion"
+                      externalMetadataColumnId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET].ExternalColumns[fecha_creacion]"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[fecha_creacion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET].ExternalColumns[Id_Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Id_Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET].ExternalColumns[Descripcion]"
+                      dataType="wstr"
+                      length="255"
+                      name="Descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET].ExternalColumns[fecha_creacion]"
+                      dataType="dbTimeStamp"
+                      name="fecha_creacion" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insertar datos Stage Ciudades-Ventas\División condicional"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+              name="División condicional"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Inputs[Entrada de división condicional]"
+                  description="Entrada en la transformación División condicional"
+                  name="Entrada de división condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Inputs[Entrada de división condicional].Columns[Id_Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Id_Ciudad"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[Id_Ciudad]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Outputs[not null]"
+                  description="Salida 1 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="not null"
+                  synchronousInputId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">[ISNULL](#{Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[Id_Ciudad]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(Id_Ciudad)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Outputs[Dato not null]"
+                  description="Salida predeterminada de la transformación División condicional"
+                  exclusionGroup="1"
+                  name="Dato not null"
+                  synchronousInputId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Inputs[Entrada de división condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Outputs[Salida de error de división condicional]"
+                  description="Salida de error de la transformación División condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de división condicional"
+                  synchronousInputId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Inputs[Entrada de división condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Origen de ADO NET Proyecto_ventas"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">[Ventas].[ciudades_ventas]</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Connections[IDbConnection]"
+                  connectionManagerID="{AD09DAA5-0921-4D07-810D-7BB22DB802A8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Conexion_Proyecto_Ventas]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[Id_Ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].ExternalColumns[Id_Ciudad]"
+                      length="255"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[Id_Ciudad]"
+                      name="Id_Ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[Descripcion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].ExternalColumns[Descripcion]"
+                      length="255"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[Descripcion]"
+                      name="Descripcion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[fecha_creacion]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].ExternalColumns[fecha_creacion]"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].Columns[fecha_creacion]"
+                      name="fecha_creacion"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].ExternalColumns[Id_Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Id_Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].ExternalColumns[Descripcion]"
+                      dataType="wstr"
+                      length="255"
+                      name="Descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET].ExternalColumns[fecha_creacion]"
+                      dataType="dbTimeStamp"
+                      name="fecha_creacion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET].Columns[Id_Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET].Columns[Id_Ciudad]"
+                      name="Id_Ciudad" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET].Columns[Descripcion]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET].Columns[Descripcion]"
+                      name="Descripcion" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET].Columns[fecha_creacion]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET].Columns[fecha_creacion]"
+                      name="fecha_creacion" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insertar datos Stage Ciudades-Ventas.Paths[Dato not null]"
+              endId="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas.Inputs[Entrada de destino de ADO NET]"
+              name="Dato not null"
+              startId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Outputs[Dato not null]" />
+            <path
+              refId="Package\Insertar datos Stage Ciudades-Ventas.Paths[Salida de origen de ADO NET]"
+              endId="Package\Insertar datos Stage Ciudades-Ventas\División condicional.Inputs[Entrada de división condicional]"
+              name="Salida de origen de ADO NET"
+              startId="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\limipar datos Stage Ciudades-Ventas"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="limipar datos Stage Ciudades-Ventas"
+      DTS:DTSID="{7AA92485-A7A5-4A31-ADF7-B3928D84F87B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="limipar datos Stage Ciudades-Ventas"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AED28A02-2E49-4B4C-9736-3BC4CBA133DC}"
+          SQLTask:SqlStatementSource="truncate table Ventas.ciudades_ventas" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{2E7674F6-6AFB-45C8-AE17-13B1F66959B3}"
+      DTS:From="Package\limipar datos Stage Ciudades-Ventas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Insertar datos Stage Ciudades-Ventas" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="257,42"
+          Id="Package\Insertar datos Stage Ciudades-Ventas"
+          TopLeft="557,214" />
+        <NodeLayout
+          Size="309,42"
+          Id="Package\limipar datos Stage Ciudades-Ventas"
+          TopLeft="533,70" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="686.5,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,102"
+              Start="0,0"
+              End="0,94.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,94.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insertar datos Stage Ciudades-Ventas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Insertar datos Stage Ciudades-Ventas\División condicional"
+          TopLeft="224,114" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas"
+          TopLeft="464,35" />
+        <NodeLayout
+          Size="302,42"
+          Id="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas"
+          TopLeft="445,231" />
+        <EdgeLayout
+          Id="Package\Insertar datos Stage Ciudades-Ventas.Paths[Salida de origen de ADO NET]"
+          TopLeft="590.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-281,37"
+              Start="0,0"
+              End="-281,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
+                  <mssgle:LineSegment
+                    End="-277,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-277,18.5"
+                    Point2="-281,18.5"
+                    Point3="-281,22.5" />
+                  <mssgle:LineSegment
+                    End="-281,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insertar datos Stage Ciudades-Ventas.Paths[Dato not null]"
+          TopLeft="309.5,156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="286.5,75"
+              Start="0,0"
+              End="286.5,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.5"
+                    Point2="0,37.5"
+                    Point3="4,37.5" />
+                  <mssgle:LineSegment
+                    End="282.5,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="282.5,37.5"
+                    Point2="286.5,37.5"
+                    Point3="286.5,41.5" />
+                  <mssgle:LineSegment
+                    End="286.5,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="114.38787109375,42.5,57.7242578125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insertar datos Stage Ciudades-Ventas\Origen de ADO NET Proyecto_ventas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insertar datos Stage Ciudades-Ventas\Destino de ADO NET Stage Ciudades-Ventas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
